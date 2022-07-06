@@ -67,7 +67,7 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions : {
-          w3c: true
+          w3c: true,
         }
       }
     },

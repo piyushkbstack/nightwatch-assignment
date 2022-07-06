@@ -1,22 +1,57 @@
-module.exports = {
-  "Bstack Demo": async function (browser) {
-    browser.url('https://www.bstackdemo.com/');
+  module.exports = {
+    "Nightwatch Assignment": async function (browser) {
+      browser.windowMaximize()
+      browser.url('https://www.browserstack.com/');
+    
 
-    // Get the product text on the page
-    const productText = await browser.useXpath().getText('//*[@id="1"]/p', function(result) {
-      return Promise.resolve(result.value);
+      browser.useXpath().click('//span[contains(text(),"Developers")]')
+
+      browser.useXpath().click('//ul[@id="developers-menu-dropdown"]//*[@title="Documentation"]')
+  const websiteTestProducts = ["Selenium", "Cypress", "Playwright", "Puppeteer", "JS Testing API", "Percy", "Live"]
+  browser.elements('xpath', '//h2[contains(text(),"Test your websites")]/following-sibling::div[1]//div[@class="product-container--content"]//span', function(result){
+      els = result.value
+      var i = 0
+      els.forEach(function(el){
+        let elementID = el[Object.keys(el)[0]]
+          browser.elementIdText(elementID, function(text) {
+            browser.assert.equal(text.value, websiteTestProducts[i])
+            i++;
+                });
+          });
     });
 
-    //Check of button present for add to cart
-    browser.useXpath().expect.element('//*[@id="1"]/div[4]').to.be.present;
+  const mobileTestProducts = ["Appium", "Espresso", "XCUITest", "EarlGrey", "App Live"]
+  browser.elements('xpath', '//h2[contains(text(),"Test your mobile apps")]/following-sibling::div[1]//div[@class="product-container--content"]//span', function(result){
+      els = result.value
+      var i = 0
+      els.forEach(function(el){
+        let elementID = el[Object.keys(el)[0]]
+          browser.elementIdText(elementID, function(text) {
+            browser.assert.equal(text.value, mobileTestProducts[i])
+            i++;
+                });
+          });
+    });
 
-    //click on add to cart
-    browser.useXpath().click('//*[@id="1"]/div[4]');
+  const smartTVTestProducts = ["Appium"]
+  browser.elements('xpath', '//h2[contains(text(),"Test your Smart TV apps")]/following-sibling::div[1]//div[@class="product-container--content"]//span', function(result){
+      els = result.value
+      var i = 0
+      els.forEach(function(el){
+        let elementID = el[Object.keys(el)[0]]
+          browser.elementIdText(elementID, function(text) {
+            browser.assert.equal(text.value, smartTVTestProducts[i])
+            i++;
+                });
+          });
+    });
 
-    // Check if cart os opened 
-    browser.useXpath().expect.element('//*[@class="float-cart__content"]').to.be.present;
+    browser.useXpath().click('//div[@class="product-container--content"]//*[@title="Selenium"]')
 
-    // Check if product in cart is equal to the product we selected
-    browser.useXpath().expect.element('//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]').text.to.equal(productText);
-  }
-};
+    browser.useXpath().click('//a[text()="Nightwatch"]')
+    browser.elements('xpath', '//h2[@id="prerequisites"]//preceding-sibling::ol//li', function(result){
+      els = result.value
+      browser.assert.equal(els.length, 4)
+    });
+    }
+  };

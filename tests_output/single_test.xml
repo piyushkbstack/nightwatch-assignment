@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="single_test"
+    errors="1" failures="0" hostname="" id="" package="single_test" skipped="1"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+    <system-err>
+        WebDriverError: An error occurred while creating a new Selenium Server session: [WebDriverError] Invalid username or password
+    </system-err>
+  
+
+    
+    <error message="An error occurred while creating a new Selenium Server session: [WebDriverError] Invalid username or password"><![CDATA[
+      WebDriverError: An error occurred while creating a new Selenium Server session: [WebDriverError] Invalid username or password
+    at Object.checkLegacyResponse (/Users/piyushkumar/Desktop/nwAssignemnt/nightwatch-assignment/node_modules/selenium-webdriver/lib/error.js:558:15)
+    at parseHttpResponse (/Users/piyushkumar/Desktop/nwAssignemnt/nightwatch-assignment/node_modules/selenium-webdriver/lib/http.js:540:13)
+    at Executor.execute (/Users/piyushkumar/Desktop/nwAssignemnt/nightwatch-assignment/node_modules/selenium-webdriver/lib/http.js:474:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      ]]></error>  
+
+  
+    
+    <testcase
+      name="Bstack Demo" classname="single_test">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

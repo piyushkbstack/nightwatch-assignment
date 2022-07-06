@@ -5,9 +5,31 @@
 
   <testsuite name="single_test"
     errors="0" failures="0" hostname="" id="" package="single_test" skipped="0"
-    tests="1" time="5.178" timestamp="">
+    tests="1" time="16.86" timestamp="">
   
-    <testcase name="Bstack Demo" classname="single_test" time="5.178" assertions="3">
+    <testcase name="Nightwatch Assignment" classname="single_test" time="16.86" assertions="14">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 
