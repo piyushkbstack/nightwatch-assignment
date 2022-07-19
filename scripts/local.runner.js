@@ -12,7 +12,6 @@ try {
   bs_local.start({ key: process.env.BROWSERSTACK_ACCESS_KEY }, function (error) {
     if (error) throw error;
 
-    console.log('Connected. Now testing...');
     Nightwatch.cli(function (argv) {
       Nightwatch.CliRunner(argv)
         .setup()
