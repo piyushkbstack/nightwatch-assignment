@@ -1,2 +1,2 @@
 # railsApp
-Testing
+Testing merge functionality
