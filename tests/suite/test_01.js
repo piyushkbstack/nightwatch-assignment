@@ -1,5 +1,5 @@
 module.exports = {
-  "Google's Search Functionality": function (browser) {
+  "Google Search Functionality": function (browser) {
     browser
       .url("https://www.google.com")
       .setValue("input[name=q]", ["BrowserStack 01", browser.Keys.ENTER]) // this submits on desktop browsers
